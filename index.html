@@ -1081,14 +1081,12 @@
                     max = 1;
                 if (max > 20)
                     max = 20;
-                max = 20;
                 return max;
             }
 
             function updateSelectableWave() {
                 var minAllowed = 1;
-                var maxAllowed = 25;
-                    //getMaxSelectableWave();
+                var maxAllowed = getMaxSelectableWave();
 
                 selectedWave = Math.min(Math.max(selectedWave, minAllowed), maxAllowed);
             }
