@@ -29,7 +29,7 @@
             var prestiged = false;
             var highestWaveReached = 1;
             var MIN_WAVE = 1;
-            var MAX_WAVE = 26;
+            var MAX_WAVE = 260;
             var wave = 1;
             var selectedWave = 1;
             var waveInProgress = false;
@@ -1032,7 +1032,7 @@
                             spawned = true;
                         }
 
-                    } else if (wave < 25){ 
+                    } else if (wave < 250){ 
                         if (budget >= sniperEnemy.weight) {
                             spawnEnemy(sniperEnemy);
                             budget -= sniperEnemy.weight;
@@ -1091,7 +1091,7 @@
 
             function updateSelectableWave() {
                 var minAllowed = 1;
-                var maxAllowed = 25;
+                var maxAllowed = 250;
                     //getMaxSelectableWave();
 
                 selectedWave = Math.min(Math.max(selectedWave, minAllowed), maxAllowed);
