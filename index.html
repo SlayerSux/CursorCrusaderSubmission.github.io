@@ -21,7 +21,7 @@
             var mouseLeftDown = false;
             var playerMaxHealth = 10;
             var playerHealth = 10;
-            var shards = 10000;
+            var shards = 0;
             var totalShardsCollected = 0;
 
             var totalPrestiges = 0;
@@ -64,6 +64,7 @@
             var speedLevel = 0;
             var rangeLevel = 0;
             var sizeLevel = 0;
+            var playerRadius = 25;
             var UPGRADE_COST = 100;
 
             // Base costs
@@ -708,7 +709,7 @@
 
 
 
-            var dot = new Dot(600, 350, 25, "white", arenaX, arenaY, arenaSize);
+            var dot = new Dot(600, 350, playerRadius, "white", arenaX, arenaY, arenaSize);
             var startButton = new Button("Start", 550, 360, 100, 50, "white", "black", 10, function () {
                 gameScreen = "arena1";
 
@@ -854,7 +855,7 @@
                     return;
 
                 shards -= UPGRADE_COST;
-                dot.radius -= 0.25;
+                playerRadius -= 0.25;
             });
 
 
