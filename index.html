@@ -1230,7 +1230,7 @@
                                 dot.attackHitSet.add(enemyVar);
 
                                 if (enemyVar.health <= 0) {
-                                    var scale = Math.sqrt(wave) + (wave * 0.5);
+                                    var scale = Math.sqrt(wave) + (wave * 0.01);
                                     var gain = Math.floor(enemyVar.shardsDrop * scale);
                                     shards += gain;
                                     totalShardsCollected += gain;
