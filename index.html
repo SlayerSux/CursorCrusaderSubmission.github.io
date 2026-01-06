@@ -1376,10 +1376,8 @@
                         mouseLeftDown = false;
                     }
                 } else if (gameScreen === "speedUpgrades") {
-                    easingUpgradeButton.draw(ctx, mouseXPos, mouseYPos);
-
-
-                    if (easingUpgradeButton.handleClick(mouseXPos, mouseYPos, mouseLeftDown)) {
+                    speedUpgradeButton.draw(ctx, mouseXPos, mouseYPos);
+                    if (speedUpgradeButton.handleClick(mouseXPos, mouseYPos, mouseLeftDown)) {
                         mouseLeftDown = false;
                     }
 
@@ -1402,8 +1400,8 @@
                 } else if (gameScreen === "sizeUpgrades") {
                     drawMediumText("Size Level: " + sizeLevel, 450, 230, "white");
                     drawLargeText("Size Upgrades", 450, 100, "white");
-                    speedUpgradeButton.draw(ctx, mouseXPos, mouseYPos);
-                    if (speedUpgradeButton.handleClick(mouseXPos, mouseYPos, mouseLeftDown)) {
+                    sizeUpgradeButton.draw(ctx, mouseXPos, mouseYPos);
+                    if (sizeUpgradeButton.handleClick(mouseXPos, mouseYPos, mouseLeftDown)) {
                         mouseLeftDown = false;
                     }
                     upgradesBackButton.draw(ctx, mouseXPos, mouseYPos);
