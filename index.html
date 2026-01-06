@@ -838,7 +838,7 @@
                     return;
 
                 shards -= UPGRADE_COST;
-                dot.baseDamage += 1;
+                dot.attackDamage += 1;
             });
 
 
@@ -1101,7 +1101,8 @@
 
             function updateSelectableWave() {
                 var minAllowed = 1;
-                var maxAllowed = getMaxSelectableWave();
+                var maxAllowed = 25;
+                    //getMaxSelectableWave();
 
                 selectedWave = Math.min(Math.max(selectedWave, minAllowed), maxAllowed);
             }
@@ -1164,7 +1165,7 @@
 
 
                     if (wave === FINAL_BOSS_WAVE && !bossActive && !waveInProgress && boss === null && !finalBossDefeated) {
-                        boss = new bossEnemy(600, 500, 60, 25, 0.5, 2.5, 8, 2000, 0.5, 0.25, 5, 0.001, 4, "purple", 200);
+                        boss = new bossEnemy(600, 500, 60, 700, 1, 2.5, 8, 1500, 0.004, 0.25, 5, 0.001, 4, "purple", 200);
                         //x, y, radius, health, bulletDamage, bulletSpeed, bulletQuantity, bulletCooldown, bulletRotationSpeed, lazerDamage, lazerQuantity, lazerRotationSpeed, phases, colour, shardDrop
                         bossActive = true;
                         waveInProgress = true;
