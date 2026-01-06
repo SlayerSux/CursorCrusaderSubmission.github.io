@@ -1092,7 +1092,7 @@
              * sets the minimum to be at least 1 and the new highest will be 5 less than your highest
              */
             function getMaxSelectableWave() {
-                var max = highestWaveReached - 5;
+                var max = Math.max(highestWaveReached - 5, 1);
 
                 if (max < 1)
                     max = 1;
