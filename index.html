@@ -905,7 +905,7 @@
                     }
                 });
 
-
+                draw();
 
             }
 
@@ -1450,9 +1450,8 @@
 
                 window.requestAnimationFrame(draw);
             }
-
-            init();
-            draw();
+            window.addEventListener("load", init, false);
+            
 
         </script> 
     </body>
