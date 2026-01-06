@@ -29,7 +29,7 @@
             var prestiged = false;
             var highestWaveReached = 1;
             var MIN_WAVE = 1;
-            var MAX_WAVE = 260;
+            var MAX_WAVE = 26;
             var wave = 1;
             var selectedWave = 1;
             var waveInProgress = false;
@@ -632,12 +632,7 @@
 
                     // health bar
                     ctx.fillStyle = "green";
-                    ctx.fillRect(
-                            this.x - this.size,
-                            this.y - this.size - 8,
-                            (this.health / this.maxHealth) * (this.size * 2),
-                            4
-                            );
+                    ctx.fillRect(  this.x - this.size,   this.y - this.size - 8,   (this.health / this.maxHealth) * (this.size * 2), 4 );
                 }
             }
             function updateProjectiles() {
@@ -1032,7 +1027,7 @@
                             spawned = true;
                         }
 
-                    } else if (wave < 250){ 
+                    } else if (wave < 25){ 
                         if (budget >= sniperEnemy.weight) {
                             spawnEnemy(sniperEnemy);
                             budget -= sniperEnemy.weight;
@@ -1091,14 +1086,14 @@
 
             function updateSelectableWave() {
                 var minAllowed = 1;
-                var maxAllowed = 250;
+                var maxAllowed = 25;
                     //getMaxSelectableWave();
 
                 selectedWave = Math.min(Math.max(selectedWave, minAllowed), maxAllowed);
             }
 
             function endGame() {
-                if (wave >= 250 && totalPrestiges >= 1) {
+                if (wave >= 25 && totalPrestiges >= 0) {
                     gameScreen === "endGame";
                 }
             }
@@ -1235,7 +1230,7 @@
                                 dot.attackHitSet.add(enemyVar);
 
                                 if (enemyVar.health <= 0) {
-                                    var scale = Math.sqrt(wave) + (wave * 0.2);
+                                    var scale = Math.sqrt(wave) + (wave * 0.5);
                                     var gain = Math.floor(enemyVar.shardsDrop * scale);
                                     shards += gain;
                                     totalShardsCollected += gain;
