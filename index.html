@@ -30,7 +30,7 @@
 
             var MIN_WAVE = 1;
             var MAX_WAVE = 26;
-            var highestWaveReached;
+            var highestWaveReached = 1;
             var wave = 1;
             var selectedWave = 1;
             var waveInProgress = false;
@@ -1184,6 +1184,7 @@
                     if (waveInProgress && enemies.length === 0 && !bossActive) {
                         waveInProgress = false;
                         wave++;
+                        highestWaveReached = Math.max(wave, highestWaveReached);
                         lastWaveEnd = Date.now();
                     }
                     dot.applyUpgrades();
@@ -1265,7 +1266,7 @@
                     // Bullets
                     updateProjectiles();
                     drawProjectiles();
-
+    
                     arenaRect(arenaX, arenaY, arenaSize, arenaSize, "white", 10);
                     backButton.draw(ctx, mouseXPos, mouseYPos);
                     if (backButton.handleClick(mouseXPos, mouseYPos, mouseLeftDown)) {
