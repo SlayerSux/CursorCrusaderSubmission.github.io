@@ -21,7 +21,7 @@
             var mouseLeftDown = false;
             var playerMaxHealth = 10;
             var playerHealth = 10;
-            var shards = 100;
+            var shards = 10000;
             var totalShardsCollected = 0;
 
             var totalPrestiges = 0;
@@ -771,10 +771,10 @@
             var mainPrestigeUpgradesButton = new Button("Prestige", 760, 350, 260, 90, "white", "black", 55, function () {
                 gameScreen = "prestigeUpgrades";
             });
-            var prestigeButton = new Button("Prestige?", 760, 350, 260, 90, "white", "black", 55, function () {
-                if (totalShardsCollected < 1000000)
+            var prestigeButton = new Button("Locked", 760, 350, 260, 90, "white", "black", 55, function () {
+                if (totalShardsCollected < 1000000) {
                     return;
-
+                }
                 prestiged = true;
                 prestigePoints += Math.floor(totalShardsCollected / 1000000);
 
@@ -822,17 +822,7 @@
                 selectedWave++;
                 updateSelectableWave();
             });
-            var dmgButtons = [
-                new Button("DMG %", 350, 200, 150, 80, "white", "black", 25, function () {
-                    buyDamageUpgrade("percent");
-                }),
-                new Button("FLAT", 525, 200, 150, 80, "white", "black", 35, function () {
-                    buyDamageUpgrade("flat");
-                }),
-                new Button("MULTI", 700, 200, 150, 80, "white", "black", 25, function () {
-                    buyDamageUpgrade("multi");
-                })
-            ];
+            
             var damageUpgradeButton = new SimpleUpgradeButton("+1 Damage (100)", 490, 260, function () {
                 if (shards < UPGRADE_COST)
                     return;
@@ -869,7 +859,7 @@
                     return;
 
                 shards -= UPGRADE_COST;
-                dot.radius = Math.max(5, dot.radius - 0.5);
+                dot.radius -= 0.25;
             });
 
 
@@ -1326,9 +1316,9 @@
                     if (backButton.handleClick(mouseXPos, mouseYPos, mouseLeftDown)) {
                         mouseLeftDown = false;
                     }
-                    if (prestigeButton.handleClick(mouseXPos, mouseYPos, mouseLeftDown)) {
-                        mouseLeftDown = false;
-                    }
+                    //if (prestigeButton.handleClick(mouseXPos, mouseYPos, mouseLeftDown)) { Disabled for no usage yet, however there will be a use
+                     //   mouseLeftDown = false;
+                   // }
 //setting up the menud for upgrading
                 } else if (gameScreen === "mainUpgradesPrestiged") {
 
