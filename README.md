@@ -1,2 +1,0 @@
-# CursorCrusaderSubmission.github.io
-Game
