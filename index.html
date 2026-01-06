@@ -377,7 +377,7 @@
                     this.arenaSize = arenaSize;
                     this.targetX = x;
                     this.targetY = y;
-                    this.ease = 0.01;
+                    this.ease = 0.005;
                     this.baseEase = this.ease;
                     this.baseRadius = this.radius;
                     this.baseAttackMaxRadius = this.attackMaxRadius;
@@ -1404,8 +1404,8 @@
                         mouseLeftDown = false;
                     }
                 } else if (gameScreen === "rangeUpgrades") {
-                    radiusUpgradeButton.draw(ctx, mouseXPos, mouseYPos);
-                    if (radiusUpgradeButton.handleClick(mouseXPos, mouseYPos, mouseLeftDown)) {
+                    rangeUpgradeButton.draw(ctx, mouseXPos, mouseYPos);
+                    if (rangeUpgradeButton.handleClick(mouseXPos, mouseYPos, mouseLeftDown)) {
                         mouseLeftDown = false;
                     }
 
@@ -1417,6 +1417,10 @@
                 } else if (gameScreen === "sizeUpgrades") {
                     drawMediumText("Size Level: " + sizeLevel, 450, 230, "white");
                     drawLargeText("Size Upgrades", 450, 100, "white");
+                    speedUpgradeButton.draw(ctx, mouseXPos, mouseYPos);
+                    if (speedUpgradeButton.handleClick(mouseXPos, mouseYPos, mouseLeftDown)) {
+                        mouseLeftDown = false;
+                    }
                     upgradesBackButton.draw(ctx, mouseXPos, mouseYPos);
                     if (upgradesBackButton.handleClick(mouseXPos, mouseYPos, mouseLeftDown)) {
                         mouseLeftDown = false;
