@@ -27,10 +27,9 @@
             var totalPrestiges = 0;
             var prestigePoints = 0;
             var prestiged = false;
-
+            var highestWaveReached = 1;
             var MIN_WAVE = 1;
             var MAX_WAVE = 26;
-            var highestWaveReached = 1;
             var wave = 1;
             var selectedWave = 1;
             var waveInProgress = false;
@@ -41,8 +40,6 @@
 
 
             var gameScreen = "menu";
-            var highestWave = 1;
-            var selectedWave = 1;
             // arena init
             var arenaX = 275;
             var arenaY = 25;
@@ -1092,7 +1089,7 @@
              * sets the minimum to be at least 1 and the new highest will be 5 less than your highest
              */
             function getMaxSelectableWave() {
-                var max = Math.max(highestWaveReached - 5, 1);
+                var max = highestWaveReached-5;
 
                 if (max < 1)
                     max = 1;
