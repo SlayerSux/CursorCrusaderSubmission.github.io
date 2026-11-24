@@ -435,7 +435,7 @@
 
                     // handle attack growth
                     if (this.isAttacking) {
-                        this.attackRadius += (this.attackMaxRadius - this.attackRadius) * 0.2;
+                        this.attackRadius += (this.attackMaxRadius - this.attackRadius) * 0.01;
 
                         if (this.attackRadius >= this.attackMaxRadius * 0.99) {
                             this.isAttacking = false;
